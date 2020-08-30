@@ -19,14 +19,11 @@ public class GenericBoardStrategy implements IBoardStrategy {
             nextCell = cells.get(player.getPosition().getPosition() + move);
             if (nextCell == null)
                 return player.getPosition();
-
             Piece piece = pieceMap.getOrDefault(nextCell, null);
             if (piece != null) {
                 nextCell = piece.getToCell();
             }
-
         }
-
         return nextCell;
     }
 

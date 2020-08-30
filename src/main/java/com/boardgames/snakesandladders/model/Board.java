@@ -2,6 +2,7 @@ package com.boardgames.snakesandladders.model;
 
 import com.boardgames.snakesandladders.behaviour.IBoardStrategy;
 import com.boardgames.snakesandladders.enums.PlayerType;
+import com.boardgames.snakesandladders.model.Dice.Dice;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,8 +35,10 @@ public class Board {
 
         public Builder addPlayers(int count) {
             this.players = new ArrayList<>();
+            PlayerType playerType = PlayerType.HUMAN;
             for (int i=0;i<count;i++) {
-                this.players.add(new Player(PlayerType.HUMAN, "Player" + i, cells.get(1), false));
+                this.players.add(new Player(playerType, "Player" + i, cells.get(1), false));
+                playerType = PlayerType.COMPUTER;
             }
             return this;
         }
@@ -49,6 +52,7 @@ public class Board {
             this.iBoardStrategy = iBoardStrategy;
             return this;
         }
+
 
         public Board build() {
 

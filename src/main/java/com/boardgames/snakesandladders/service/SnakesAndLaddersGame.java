@@ -7,9 +7,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Game {
+public class SnakesAndLaddersGame {
 
-    //TODO :: decoupling
     private Board board;
     private IGamePlay iGamePlay;
 
