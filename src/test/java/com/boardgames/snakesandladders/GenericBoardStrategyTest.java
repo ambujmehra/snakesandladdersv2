@@ -91,4 +91,16 @@ public class GenericBoardStrategyTest {
         Assert.assertTrue(player.isOpen());
         Assert.assertEquals(nextCell.getPosition().intValue(), 25);
     }
+
+    @Test
+    public void testOverFlowCase() {
+        Player player = board.getPlayers().get(0);
+        player.setPosition(board.getCells().get(98));
+        player.setOpen(true);
+        int move = 4;
+        Cell nextCell = genericBoardStrategy.getNextPosition(move, player, board.getPieceMap(), board.getCells());
+        Assert.assertNotNull(nextCell);
+        Assert.assertTrue(player.isOpen());
+        Assert.assertEquals(nextCell.getPosition().intValue(), 98);
+    }
 }

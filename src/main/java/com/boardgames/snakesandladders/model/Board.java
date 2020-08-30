@@ -1,7 +1,6 @@
 package com.boardgames.snakesandladders.model;
 
 import com.boardgames.snakesandladders.behaviour.IBoardStrategy;
-import com.boardgames.snakesandladders.enums.PieceType;
 import com.boardgames.snakesandladders.enums.PlayerType;
 import lombok.Getter;
 import lombok.Setter;
