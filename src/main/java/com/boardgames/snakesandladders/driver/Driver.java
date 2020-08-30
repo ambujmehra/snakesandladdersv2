@@ -43,7 +43,7 @@ public class Driver {
         pieceMap.put(board.getCells().get(97), new Ladder(PieceType.SNAKES,board.getCells().get(97), board.getCells().get(45)));
         board.setPieceMap(pieceMap);
 
-
+        // Game
         SnakesAndLaddersGame snakesAndLaddersGame = new SnakesAndLaddersGame();
         snakesAndLaddersGame.setBoard(board);
         snakesAndLaddersGame.setIGamePlay(genericGameStrategy);

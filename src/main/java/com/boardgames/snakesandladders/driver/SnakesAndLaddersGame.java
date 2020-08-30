@@ -1,4 +1,4 @@
-package com.boardgames.snakesandladders.service;
+package com.boardgames.snakesandladders.driver;
 
 import com.boardgames.snakesandladders.behaviour.IGamePlay;
 import com.boardgames.snakesandladders.model.Board;
