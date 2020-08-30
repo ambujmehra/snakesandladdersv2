@@ -6,10 +6,7 @@ import com.boardgames.snakesandladders.enums.PlayerType;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Getter
 @Setter
@@ -44,7 +41,8 @@ public class Board {
             return this;
         }
 
-        public Builder setPieces(Map<PieceType, Integer> piecesCount) {
+        public Builder setPieces() {
+            this.pieceMap =new HashMap<>();
             return this;
         }
 
@@ -57,6 +55,13 @@ public class Board {
 
             return new Board(this);
         }
+
+        public int getRandomCell() {
+            Random r = new Random();
+            int Low = 5;
+            int High = 95;
+            return r.nextInt(High - Low) + Low;
+        }
     }
 
     private Board(Builder builder) {
@@ -65,4 +70,7 @@ public class Board {
         pieceMap = builder.pieceMap;
         iBoardStrategy = builder.iBoardStrategy;
     }
+
+
+
 }

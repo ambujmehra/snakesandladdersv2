@@ -8,5 +8,5 @@ import java.util.Map;
 
 public interface IBoardStrategy {
 
-    Cell getNextPosition(Integer move, Player player, Map<Cell, Piece> pieceMap);
+    Cell getNextPosition(Integer move, Player player, Map<Cell, Piece> pieceMap, Map<Integer,Cell> cells);
 }
