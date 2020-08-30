@@ -2,7 +2,6 @@ package com.boardgames.snakesandladders.model;
 
 import com.boardgames.snakesandladders.behaviour.IBoardStrategy;
 import com.boardgames.snakesandladders.enums.PlayerType;
-import com.boardgames.snakesandladders.model.Dice.Dice;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -74,6 +73,17 @@ public class Board {
         iBoardStrategy = builder.iBoardStrategy;
     }
 
+    public void makePlayerMove(Player player, int move) {
+        System.out.println("MOVE for Player ---" + player.getName() + " with value - " + move);
+        Cell nextCell = iBoardStrategy.getNextPosition(move, player, this.pieceMap, this.getCells());
+        if(nextCell == null) {
+            System.out.println("Not open");
+            return;
+        }
+        System.out.println("Setting player to " + nextCell.getPosition());
+        player.setPosition(nextCell);
+        System.out.println("==================================");
+    }
 
 
 }

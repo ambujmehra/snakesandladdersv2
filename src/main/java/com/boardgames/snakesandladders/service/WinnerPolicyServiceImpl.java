@@ -18,4 +18,9 @@ public class WinnerPolicyServiceImpl implements IWinnerPolicy {
         }
         return winner;
     }
+
+    @Override
+    public boolean checkIfPlayerWon(Player player) {
+        return player.getPosition().getPosition().equals(100);
+    }
 }

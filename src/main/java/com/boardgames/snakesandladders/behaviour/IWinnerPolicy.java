@@ -7,4 +7,6 @@ import java.util.List;
 public interface IWinnerPolicy {
 
     Player checkAndGetWinner(List<Player> players);
+
+    boolean checkIfPlayerWon(Player player);
 }
